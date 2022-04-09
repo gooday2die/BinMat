@@ -30,8 +30,7 @@ void BinMat::set(uint32_t argX, uint32_t argY, uint8_t value){
 	if ((argX >= this->x) || (argY >= this->y)) throw BinMat::OutOfRangeException(); 
 	uint32_t dataIndex = (this->x * argY + argX) / 32;
 	uint32_t dataSegmentIndex = ((this->x * argY + argX) % 32);
-	printf("%d\n", dataSegmentIndex);
 	uint32_t tmpData = (value << dataSegmentIndex);
-	uint32_t tmpData2 = !(0x1 << dataSegmentIndex);
+	uint32_t tmpData2 = ~(1 << dataSegmentIndex);
 	this->data[dataIndex] = ((this->data[dataIndex] & tmpData2) | tmpData);
 }

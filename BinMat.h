@@ -19,7 +19,8 @@ private:
 public:
 	BinMat(uint32_t, uint32_t);
 	uint8_t get(uint32_t, uint32_t);
-	void set(uint32_t, uint32_t, uint32_t);
-}
+	void set(uint32_t, uint32_t, uint8_t);
+
+};
 
 

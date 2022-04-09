@@ -5,10 +5,10 @@
 // @brief : A file that declares everything for class BinMat
 // 
 
-#pragma once
-
 #include <cstdint>
 #include <cstdlib>
+#include <cstdio>
+#include <exception>
 
 
 class BinMat{
@@ -20,7 +20,9 @@ public:
 	BinMat(uint32_t, uint32_t);
 	uint8_t get(uint32_t, uint32_t);
 	void set(uint32_t, uint32_t, uint8_t);
-
+	class OutOfRangeException : public std::exception{
+		;
+	};
 };
 
 
